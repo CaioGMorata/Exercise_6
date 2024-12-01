@@ -1,4 +1,4 @@
-SELECT 
+SELECT DISTINCT
     CASE 
         WHEN n.Grade >= 8 THEN s.Name 
         ELSE 'NULL' 
