@@ -13,10 +13,10 @@ ON
     s.Value BETWEEN n.Min_Value AND n.Max_Value
 ORDER BY 
     CASE 
-        WHEN n.Grade >= 8 THEN -n.Grade -- Descending order for grades >= 8
-        ELSE n.Grade                   -- Ascending order for grades < 8
+        WHEN n.Grade >= 8 THEN -n.Grade -- Ordem decrescente para notas >= 8
+        ELSE -n.Grade                   -- Ordem crescente para notas < 8
     END,
     CASE 
-        WHEN n.Grade >= 8 THEN s.Name  -- Alphabetical order for names (grade >= 8)
-        ELSE s.Value                   -- Order by value for grade < 8
+        WHEN n.Grade >= 8 THEN s.Name  -- Ordem alfabética para nomes (grade >= 8)
+        ELSE s.Value                   -- Ordem crescente para notas < 8
     END;
